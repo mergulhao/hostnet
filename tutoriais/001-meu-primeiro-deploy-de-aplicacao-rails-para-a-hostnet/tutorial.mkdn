@@ -5,20 +5,20 @@ Este tutorial apresenta um passo-a-passo do seu primeiro deploy de uma aplicaç�
 
 1. Você deve possuir a gem do Capistrano (versão 2.5.0 ou superior) instalada. Se você não possui, execute:
 
-  gem install capistrano
+    gem install capistrano
 
 2. Configure a seção production do seu database.yml com os dados da sua conta Mysql. Exemplo:
 
-  production:
-    adapter: mysql
-    database: seu_database
-    username: usuario
-    password: senha
-    host: mysql.dominio.com
+    production:
+      adapter: mysql
+      database: seu_database
+      username: usuario
+      password: senha
+      host: mysql.dominio.com
 
 3. Agora é necessário fazer o Capify da nossa aplicação. Isso significa executar:
 
-  capify .
+    capify .
 
 4. Agora você deve baixar a receita de deploy da Hostnet e colocá-la em config/deploy.rb substituindo o arquivo existente.
 
@@ -26,15 +26,15 @@ Este tutorial apresenta um passo-a-passo do seu primeiro deploy de uma aplicaç�
 
 6. É necessário preparar o terreno no servidor para o primeiro deploy. Basta executar:
 
-  cap deploy:setup
+    cap deploy:setup
 
 7. Para finalizar:
 
-  cap deploy
+    cap deploy
 
 Se tudo deu certo a sua aplicação estará no ar. Supondo que você corrigiu um bug e deseja atualizar a versão no servidor basta executar novamente:
 
-  cap deploy
+    cap deploy
 
 E as novas modificações estarão no ar!
 
@@ -45,27 +45,27 @@ Solução de problemas
 
 Se ocorrer durante o deploy um erro como esse:
 
-*** [err :: rubyruby.x-br.com] Missing the Rails 2.1.0 gem. Please `gem install -v=2.1.0 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+    *** [err :: rubyruby.x-br.com] Missing the Rails 2.1.0 gem. Please `gem install -v=2.1.0 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
 
 ou esse:
 
-*** [err :: rubyruby.x-br.com] Missing the Rails 2.0.2 gem. Please `gem install -v=2.0.2 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+    *** [err :: rubyruby.x-br.com] Missing the Rails 2.0.2 gem. Please `gem install -v=2.0.2 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
 
 Você deve editar o seu arquivo config/enviroment.rb e alterar a linha que diz:
 
-  RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
+    RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
 
   ou 
 
-  RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
+    RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 
 Para:
 
-  RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
+    RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
 
   ou
 
-  RAILS_GEM_VERSION = '2.0.4' unless defined? RAILS_GEM_VERSION
+    RAILS_GEM_VERSION = '2.0.4' unless defined? RAILS_GEM_VERSION
 
 Respectivamente.
 
@@ -73,14 +73,14 @@ Respectivamente.
 
 Se ocorrer durante o deploy um erro como esse:
 
-  * executing "cd /home/rubyruby/www/releases/20080916192611 && rake db:migrate RAILS_ENV=production"
-    servers: ["rubyruby.x-br.com"]
-    [rubyruby.x-br.com] executing command
-*** [err :: rubyruby.x-br.com] rake aborted!
-*** [err :: rubyruby.x-br.com] Access denied for user: 'rubyruby@web30.prv.f3.k8.com.br' (Using password: YES)
-*** [err :: rubyruby.x-br.com] 
-*** [err :: rubyruby.x-br.com] (See full trace by running task with --trace)
- ** [out :: rubyruby.x-br.com] (in /home/rubyruby/www/releases/20080916192611)
- ** [out :: rubyruby.x-br.com] /home/rubyruby/www/releases/20080916192611/vendor/plugins/integration/tasks
+      * executing "cd /home/rubyruby/www/releases/20080916192611 && rake db:migrate RAILS_ENV=production"
+        servers: ["rubyruby.x-br.com"]
+        [rubyruby.x-br.com] executing command
+    *** [err :: rubyruby.x-br.com] rake aborted!
+    *** [err :: rubyruby.x-br.com] Access denied for user: 'rubyruby@web30.prv.f3.k8.com.br' (Using password: YES)
+    *** [err :: rubyruby.x-br.com] 
+    *** [err :: rubyruby.x-br.com] (See full trace by running task with --trace)
+     ** [out :: rubyruby.x-br.com] (in /home/rubyruby/www/releases/20080916192611)
+     ** [out :: rubyruby.x-br.com] /home/rubyruby/www/releases/20080916192611/vendor/plugins/integration/tasks
 
 Você deve verificar o arquivo config/database.yml e configurar com os dados da sua conta Mysql, como indicado no passo 2.
