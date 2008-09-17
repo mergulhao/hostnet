@@ -51,11 +51,17 @@ Versão do Rails
 
 Se ocorrer durante o deploy um erro como esse:
 
-    *** [err :: rubyruby.x-br.com] Missing the Rails 2.1.0 gem. Please `gem install -v=2.1.0 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+    *** [err :: dominio.com] Missing the Rails 2.1.0 gem. Please `gem install 
+    -v=2.1.0 rails`, update your RAILS_GEM_VERSION setting in 
+    config/environment.rb for the Rails version you do have installed, or 
+    comment out RAILS_GEM_VERSION to use the latest version installed.
 
 ou esse:
 
-    *** [err :: rubyruby.x-br.com] Missing the Rails 2.0.2 gem. Please `gem install -v=2.0.2 rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.
+    *** [err :: dominio.com] Missing the Rails 2.0.2 gem. Please `gem install 
+    -v=2.0.2 rails`, update your RAILS_GEM_VERSION setting in 
+    config/environment.rb for the Rails version you do have installed, or 
+    comment out RAILS_GEM_VERSION to use the latest version installed.
 
 Você deve editar o seu arquivo config/enviroment.rb e alterar a linha que diz:
 
@@ -80,14 +86,13 @@ Erro de acesso ao banco de dados
 
 Se ocorrer durante o deploy um erro como esse:
 
-      * executing "cd /home/rubyruby/www/releases/20080916192611 && rake db:migrate RAILS_ENV=production"
-        servers: ["rubyruby.x-br.com"]
-        [rubyruby.x-br.com] executing command
-    *** [err :: rubyruby.x-br.com] rake aborted!
-    *** [err :: rubyruby.x-br.com] Access denied for user: 'rubyruby@web30.prv.f3.k8.com.br' (Using password: YES)
-    *** [err :: rubyruby.x-br.com] 
-    *** [err :: rubyruby.x-br.com] (See full trace by running task with --trace)
-     ** [out :: rubyruby.x-br.com] (in /home/rubyruby/www/releases/20080916192611)
-     ** [out :: rubyruby.x-br.com] /home/rubyruby/www/releases/20080916192611/vendor/plugins/integration/tasks
+      * executing "cd /home/usuario/www/releases/20080916192611 && rake db:migrate RAILS_ENV=production"
+        servers: ["dominio.com"]
+        [dominio.com] executing command
+    *** [err :: dominio.com] rake aborted!
+    *** [err :: dominio.com] Access denied for user: 'user@dominio.com' (Using password: YES)
+    *** [err :: dominio.com] 
+    *** [err :: dominio.com] (See full trace by running task with --trace)
+     ** [out :: dominio.com] (in /home/usuario/www/releases/20080916192611)
 
 Você deve verificar o arquivo config/database.yml e configurar com os dados da sua conta Mysql, como indicado no passo 2.
