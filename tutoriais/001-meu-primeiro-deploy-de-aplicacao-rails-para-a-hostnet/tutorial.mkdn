@@ -3,11 +3,11 @@ Meu primeiro deploy de aplicação Rails para a Hostnet
 
 Este tutorial apresenta um passo-a-passo do seu primeiro deploy de uma aplicação Rails sem utilizar controle de versão. Assumimos aqui que você já possui uma conta Rails na Hostnet e uma aplicação que você desejar colocar no ar. Todos os comandos são executados no diretório raiz do seu projeto.
 
-1. Você deve possuir a gem do Capistrano (versão 2.5.0 ou superior) instalada. Se você não possui, execute:
+1. Você deve possuir a gem do Capistrano (versão 2.5.0 ou superior) instalada. Se você não possui, execute:  
 
     gem install capistrano
 
-2. Configure a seção production do seu database.yml com os dados da sua conta Mysql. Exemplo:
+2. Configure a seção production do seu database.yml com os dados da sua conta Mysql. Exemplo:  
 
     production:
       adapter: mysql
@@ -16,7 +16,7 @@ Este tutorial apresenta um passo-a-passo do seu primeiro deploy de uma aplicaç�
       password: senha
       host: mysql.dominio.com
 
-3. Agora é necessário fazer o Capify da nossa aplicação. Isso significa executar:
+3. Agora é necessário fazer o Capify da nossa aplicação. Isso significa executar:  
 
     capify .
 
@@ -24,11 +24,11 @@ Este tutorial apresenta um passo-a-passo do seu primeiro deploy de uma aplicaç�
 
 5. Configure a receita nas linhas 13 e 14 de acordo com a sua conta na Hostnet.
 
-6. É necessário preparar o terreno no servidor para o primeiro deploy. Basta executar:
+6. É necessário preparar o terreno no servidor para o primeiro deploy. Basta executar:  
 
     cap deploy:setup
 
-7. Para finalizar:
+7. Para finalizar:  
 
     cap deploy
 
