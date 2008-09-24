@@ -1,2 +1,17 @@
-Tutoriais oficiais Rails da Hostnet
-===================================
+hostnet - gem oficial para suporte a deploy de aplicações
+=========================================================
+
+Descrição
+=========
+
+
+
+Install
+=======
+
+    gem install mergulhao-hostnet --source=http://gems.github.com
+
+Licença
+=======
+
+MIT License, ver arquivo LICENSE
