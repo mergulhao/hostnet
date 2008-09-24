@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'rubigen'
+
+begin
+  require 'config/environment'
+rescue LoadError
+  puts "Você não está na raiz de um projeto Rails."
+  exit(0)
+end
+
+require 'rails_generator'
+require 'rails_generator/scripts/generate'
+
+if %w(-v --version).include? ARGV.first
+  require 'newgem/version'
+  puts "#{File.basename($0)} #{Newgem::VERSION::STRING}"
+  exit(0)
+end
+
+require 'rubigen/scripts/generate'
+RubiGen::Base.use_component_sources!(:rails)
+RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')
+
+#require 'rubigen/scripts/generate'
+#source = RubiGen::PathSource.new(:application,
+#  File.join(File.dirname(__FILE__), "../rails_generators"))
+#RubiGen::Base.reset_sources
+#RubiGen::Base.append_sources source
+#RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')

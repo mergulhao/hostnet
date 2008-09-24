@@ -1,0 +1,8 @@
+Description:
+
+    Cria arquivo de deploy do capistrano padrão Hostnet já configurado com seu usuário de domínio na Hostnet.  
+  
+Usage:
+
+    script/generate hostnet_deploy username domain
+
