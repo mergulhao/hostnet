@@ -45,6 +45,19 @@ namespace :deploy do
   end
 end
 
+namespace :log do
+  task :clean, :roles => :app do
+    run "rm #{deploy_to}/current/log/production.log"
+  end
+  after "log:clean", "deploy:restart"
+  
+  task :tail, :roles => :app do
+    run "tail -f #{deploy_to}/current/log/production.log" do |channel, stream, data|
+      puts data
+    end
+  end
+end
+
 namespace :db do
   task :backup, :roles => :db do
     require 'yaml'
@@ -58,3 +71,4 @@ namespace :db do
     run "rm #{filename_path}"
   end
 end
+
