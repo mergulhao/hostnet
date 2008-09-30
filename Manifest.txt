@@ -6,7 +6,6 @@ README.txt
 Rakefile
 TODO
 bin/hostnet
-bin/hostnet-
 config/hoe.rb
 config/requirements.rb
 hostnet.gemspec
@@ -32,3 +31,5 @@ test/test_hostnet.rb
 test/test_hostnet_deploy_generator.rb
 test/test_hostnet_email_generator.rb
 tutoriais/001-meu-primeiro-deploy-de-aplicacao-rails-para-a-hostnet/tutorial.mkdn
+tutoriais/002-configurando-sua-aplicacao-para-enviar-e-mails/tutorial.mkdn
+tutoriais/003-dicas-para-administracao-e-debug-de-sua-aplicacao-rails/tutorial.mkdn

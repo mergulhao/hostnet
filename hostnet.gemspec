@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.date = %q{2008-09-30}
   s.description = %q{gem oficial para suporte a deploy de aplicações}
   s.email = ["contato@mergulhao.info"]
-  s.executables = ["hostnet", "hostnet-"]
+  s.executables = ["hostnet"]
   s.extra_rdoc_files = ["Manifest.txt", "README.txt"]
   s.files = ["CHANGELOG", "LICENSE", "Manifest.txt", "README.mkdn", "README.txt", "Rakefile", "TODO", "bin/hostnet", "bin/hostnet-", "config/hoe.rb", "config/requirements.rb", "hostnet.gemspec", "lib/hostnet.rb", "lib/hostnet/version.rb", "rails_generators/hostnet_deploy/USAGE", "rails_generators/hostnet_deploy/hostnet_deploy_generator.rb", "rails_generators/hostnet_deploy/templates/Capfile", "rails_generators/hostnet_deploy/templates/deploy.rb", "rails_generators/hostnet_email/USAGE", "rails_generators/hostnet_email/hostnet_email_generator.rb", "rails_generators/hostnet_email/templates/mail.rb", "script/console", "script/destroy", "script/generate", "setup.rb", "tasks/deployment.rake", "tasks/environment.rake", "tasks/website.rake", "test/test_generator_helper.rb", "test/test_helper.rb", "test/test_hostnet.rb", "test/test_hostnet_deploy_generator.rb", "test/test_hostnet_email_generator.rb", "tutoriais/001-meu-primeiro-deploy-de-aplicacao-rails-para-a-hostnet/tutorial.mkdn"]
   s.has_rdoc = true
