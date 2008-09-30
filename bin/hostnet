@@ -10,22 +10,41 @@ rescue LoadError
   exit(0)
 end
 
+require 'optparse'
 require 'rails_generator'
 require 'rails_generator/scripts/generate'
 
-if %w(-v --version).include? ARGV.first
-  require 'newgem/version'
-  puts "#{File.basename($0)} #{Newgem::VERSION::STRING}"
-  exit(0)
-end
-
 require 'rubigen/scripts/generate'
 RubiGen::Base.use_component_sources!(:rails)
-RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')
 
-#require 'rubigen/scripts/generate'
-#source = RubiGen::PathSource.new(:application,
-#  File.join(File.dirname(__FILE__), "../rails_generators"))
-#RubiGen::Base.reset_sources
-#RubiGen::Base.append_sources source
-#RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "
+Usages: hostnet username domain (default)
+        hostnet --deploy username domain
+        hostnet --email mailer_username mailer_password domain
+\n"
+
+  opts.on("-h", "--help", "Mostra esta mensagem") do |v|
+    puts opts
+    exit(0)
+  end
+
+  opts.on("-v", "--version", "Mostra a versão") do |v|
+    require 'hostnet/version'
+    puts "#{File.basename($0)} #{Hostnet::VERSION::STRING}"
+    exit(0)
+  end
+
+  opts.on("--deploy", "Cria receita do capistrano para deploy") do |v|
+    RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')
+    exit(0)
+  end
+
+  opts.on("--email", "Cria configuração de e-mail") do |v|
+    RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_email')
+    exit(0)
+  end
+end.parse!
+
+RubiGen::Scripts::Generate.new.run(ARGV, :generator => 'hostnet_deploy')

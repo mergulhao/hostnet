@@ -1,0 +1,8 @@
+Description:
+
+    Cria arquivo de configuração para envio de e-mails utilizando servidor smtp da Hostnet. Recomendamos a criação de uma conta de e-mail no painel apenas para ficar responsável pelo envio de e-mails.
+
+Usage:
+
+    script/generate hostnet_email mailer_username mailer_password domain
+

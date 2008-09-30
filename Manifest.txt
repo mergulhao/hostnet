@@ -6,14 +6,19 @@ README.txt
 Rakefile
 TODO
 bin/hostnet
+bin/hostnet-
 config/hoe.rb
 config/requirements.rb
+hostnet.gemspec
 lib/hostnet.rb
 lib/hostnet/version.rb
 rails_generators/hostnet_deploy/USAGE
 rails_generators/hostnet_deploy/hostnet_deploy_generator.rb
 rails_generators/hostnet_deploy/templates/Capfile
 rails_generators/hostnet_deploy/templates/deploy.rb
+rails_generators/hostnet_email/USAGE
+rails_generators/hostnet_email/hostnet_email_generator.rb
+rails_generators/hostnet_email/templates/mail.rb
 script/console
 script/destroy
 script/generate
@@ -25,3 +30,5 @@ test/test_generator_helper.rb
 test/test_helper.rb
 test/test_hostnet.rb
 test/test_hostnet_deploy_generator.rb
+test/test_hostnet_email_generator.rb
+tutoriais/001-meu-primeiro-deploy-de-aplicacao-rails-para-a-hostnet/tutorial.mkdn

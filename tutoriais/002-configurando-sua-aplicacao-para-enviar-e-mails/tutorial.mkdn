@@ -1,0 +1,14 @@
+Configurando sua aplicação para enviar e-mails
+==============================================
+
+1. Você deve possuir a gem da Hostnet instalada. Se você não possui, execute:
+
+        gem install mergulhao-hostnet --source=http://gems.github.com
+
+2. Crie no seu painel da Hostnet uma conta que será usada pelo ActionMailer do Rails para o envio de e-mails
+
+3. Na raiz do seu projeto execute:
+
+        hostnet --email mailer_username mailer_password seu_dominio.com
+
+Sua aplicação já está configurada para enviar e-mails utilizando smtp da Hostnet!

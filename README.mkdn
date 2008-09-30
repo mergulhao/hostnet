@@ -4,7 +4,7 @@ hostnet - gem oficial para suporte a deploy de aplicações
 Descrição
 =========
 
-
+Gem de suporte a deploy de aplicações para ambiente compartilhado da Hostnet.
 
 Install
 =======

@@ -8,6 +8,7 @@ RUBYFORGE_PROJECT = 'hostnet' # The unix name for your project
 HOMEPATH = "http://github.com/mergulhao/#{RUBYFORGE_PROJECT}"
 DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
 EXTRA_DEPENDENCIES = [
+   ['rubigen',             '>= 1.3.2'],
    ['capistrano',          '>= 2.5.0'],
    ['archive-tar-minitar', '>= 0.5.2'],
 ]    # An array of rubygem dependencies [name, version]
