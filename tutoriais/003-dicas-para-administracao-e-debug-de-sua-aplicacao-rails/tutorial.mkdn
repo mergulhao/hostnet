@@ -1,0 +1,29 @@
+Dicas para administracao e debug de sua aplicacao rails
+=======================================================
+
+Todas as dicas supõe que você fez upload de sua aplicação utilizando o Capistrano configurado a partir da gem oficial da Hostnet.
+
+ * Logs
+
+    1. **Meu arquivo de log está ocupando muito espaço da minha hospedagem. O que fazer?**
+
+       Você deve zerar o seu arquivo de log regularmente para evitar que ele consuma todo o espaço da sua hospedagem. Basta executar o comando:
+
+        cap log:clean
+
+    2. **Como ver o log de produção da minha aplicação?**
+
+       Para facilitar essa tarefa de debug temos uma task do Capistrano. Basta executar:
+
+        cap log:tail
+
+ * Deploy
+
+    1. **Preciso fazer o restart da minha aplicação, o que fazer?**
+
+        cap deploy:restart
+
+    2. **Ao subir a minha aplicação, preciso rodar _cap deploy:migrations_ para executar as migrations?**
+
+       Não. A receita de deploy da Hostnet efetua essa tarefa automaticamente.
+
