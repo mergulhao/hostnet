@@ -44,3 +44,17 @@ namespace :deploy do
     run "touch #{deploy_to}/current/tmp/restart.txt"
   end
 end
+
+namespace :db do
+  task :backup, :roles => :db do
+    require 'yaml'
+    cfg = YAML::load_file('config/database.yml')
+    db = cfg['production']
+    mysql_opts = "-u #{db['username']} -p#{db['password']} -h #{db['host']} #{db['database']}"
+    filename = "dump-#{application}-#{Time.now.utc.strftime("%Y%m%d%H%M%S")}.sql"
+    filename_path = "~/#{filename}"
+    run "mysqldump #{mysql_opts} > #{filename_path}"
+    get filename_path, filename
+    run "rm #{filename_path}"
+  end
+end
