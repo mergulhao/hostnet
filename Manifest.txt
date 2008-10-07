@@ -1,7 +1,6 @@
-CHANGELOG
+History.txt
 LICENSE
 Manifest.txt
-README.mkdn
 README.txt
 Rakefile
 TODO

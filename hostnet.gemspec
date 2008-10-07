@@ -1,15 +1,16 @@
 Gem::Specification.new do |s|
   s.name = %q{hostnet}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sylvestre Mergulhao"]
-  s.date = %q{2008-09-30}
+  s.date = %q{2008-10-07}
+  s.default_executable = %q{hostnet}
   s.description = %q{gem oficial para suporte a deploy de aplicações}
   s.email = ["contato@mergulhao.info"]
   s.executables = ["hostnet"]
-  s.extra_rdoc_files = ["Manifest.txt", "README.txt"]
-  s.files = ["CHANGELOG", "LICENSE", "Manifest.txt", "README.mkdn", "README.txt", "Rakefile", "TODO", "bin/hostnet", "bin/hostnet-", "config/hoe.rb", "config/requirements.rb", "hostnet.gemspec", "lib/hostnet.rb", "lib/hostnet/version.rb", "rails_generators/hostnet_deploy/USAGE", "rails_generators/hostnet_deploy/hostnet_deploy_generator.rb", "rails_generators/hostnet_deploy/templates/Capfile", "rails_generators/hostnet_deploy/templates/deploy.rb", "rails_generators/hostnet_email/USAGE", "rails_generators/hostnet_email/hostnet_email_generator.rb", "rails_generators/hostnet_email/templates/mail.rb", "script/console", "script/destroy", "script/generate", "setup.rb", "tasks/deployment.rake", "tasks/environment.rake", "tasks/website.rake", "test/test_generator_helper.rb", "test/test_helper.rb", "test/test_hostnet.rb", "test/test_hostnet_deploy_generator.rb", "test/test_hostnet_email_generator.rb", "tutoriais/001-meu-primeiro-deploy-de-aplicacao-rails-para-a-hostnet/tutorial.mkdn"]
+  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.txt"]
+  s.files = ["History.txt", "LICENSE", "Manifest.txt", "README.txt", "Rakefile", "TODO", "bin/hostnet", "config/hoe.rb", "config/requirements.rb", "hostnet.gemspec", "lib/hostnet.rb", "lib/hostnet/version.rb", "rails_generators/hostnet_deploy/USAGE", "rails_generators/hostnet_deploy/hostnet_deploy_generator.rb", "rails_generators/hostnet_deploy/templates/Capfile", "rails_generators/hostnet_deploy/templates/deploy.rb", "rails_generators/hostnet_email/USAGE", "rails_generators/hostnet_email/hostnet_email_generator.rb", "rails_generators/hostnet_email/templates/mail.rb", "script/console", "script/destroy", "script/generate", "setup.rb", "tasks/deployment.rake", "tasks/environment.rake", "tasks/website.rake", "test/test_generator_helper.rb", "test/test_helper.rb", "test/test_hostnet.rb", "test/test_hostnet_deploy_generator.rb", "test/test_hostnet_email_generator.rb", "tutoriais/001-meu-primeiro-deploy-de-aplicacao-rails-para-a-hostnet/tutorial.mkdn", "tutoriais/002-configurando-sua-aplicacao-para-enviar-e-mails/tutorial.mkdn", "tutoriais/003-dicas-para-administracao-e-debug-de-sua-aplicacao-rails/tutorial.mkdn"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/mergulhao/hostnet}
   s.post_install_message = %q{}
@@ -42,4 +43,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<hoe>, [">= 1.7.0"])
   end
 end
-

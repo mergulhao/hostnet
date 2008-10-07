@@ -1,0 +1,14 @@
+== 0.1.1 2008-10-07
+
+* Migração para o Rubyforge
+
+== 0.1.0 2008-09-30
+
+* Novos tutoriais adicionados
+  * Configurando sua aplicação para enviar e-mails
+  * Dicas para administração e debug de sua aplicação Rails
+* Adicionadas novas tasks
+
+== 0.0.1 2008-09-24
+
+* Initial release
